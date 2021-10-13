@@ -53,9 +53,6 @@ npm start
 
 ```
 
-## Authors
-
-* [**Barbara Bombachini**](https://github.com/bbombachini)  
 
 ## License
 
