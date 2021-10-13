@@ -1,0 +1,20 @@
+<section id="app">
+  <section class="movies-section">
+    <h1>${message}</h1>
+    <fieldset>
+      <label for="input">Select category:</label>
+        <select class="select" v-bind:genre="genre" v-on:change="movieGenres(movies, event.target.genre.value)">
+          <!-- $emit('change', $event.target.genre.value) -->
+          <option value="0">All</option>
+        </select>
+    </fieldset>
+    <div id="movies">
+      <div v-for="movie in movies" :id=movie.movies_id class="cover">
+        <a :href="'/movies/' + movie.movies_id">
+          <h4>${movie.movies_title}</h4>
+          <img :src='"images/"+ movie.movies_cover' :alt="movie.movies_title">
+        </a>
+      </div>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700|Montserrat:300" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- <script src="/dist/vue-social-sharing.min.js"></script> -->
+  {{#if kids}}
+    <link rel="stylesheet" href="/css/kids.css">
+    {{else}}
+    <link rel="stylesheet" href="/css/main.css">
+  {{/if}}
+
+  <title>{{ title }}</title>
+</head>
+<body>
+  <!-- Facebook script -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1910648968961590&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <div id="main-container">
+    <div id="container">
+      <h1 class="hidden">Roku | Flashback Video App</h1>
+      <header>
+        <img src="/images/roku.svg" alt="Roku Logo">
+        <nav id="main-nav">
+          <h1 class="hidden">Main Navigation</h1>
+          <ul>
+            <li><a href="/"><i class="ion-person"></i>Users</a></li>
+            <li><a href="#"><i class="ion-ios-gear"></i>Settings</a></li>
+            <li><a href="#"><i class="ion-android-menu"></i>Menu</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      {{{ body }}}
+
+    </div>
+  </div>
+  <footer>
+    <h1 class="hidden">Footer Navigation</h1>
+		<p class="copy"> &copy; 2018 Video App Company, Inc</p>
+
+		<ul>
+			<li>
+				<i class="ion-social-facebook"></i>
+			</li>
+			<li>
+				<i class="ion-social-instagram"></i>
+			</li>
+			<li>
+				<i class="ion-social-twitter"></i>
+			</li>
+		</ul>
+
+  </footer>
+  <script type="text/javascript" src="/js/prod/production.js"></script>
+  <script>
+     var appData = {
+      movies: {{{ movies }}}
+    }
+  </script>
+  {{#if mainpage}}
+    <script src="/js/main2.js"></script>
+  {{/if}}
+
+  {{#if moviepage}}
+      <script type="text/javascript">
+        var commentData = {
+          comments: {{{ comments }}}
+        }
+      </script>
+      <script src="/js/videovm.js" type="text/javascript"></script>
+  {{/if}}
+
+  <!-- Social Media scripts -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    window.___gcfg = {lang: 'en-GB'};
+
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script>
+
+</body>
+</html>
